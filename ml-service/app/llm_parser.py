@@ -10,19 +10,19 @@ OLLAMA_URL = "http://127.0.0.1:11434/api/generate"
 
 
 def parse_resume(resume_text: str):
-
+    resume_text = " ".join(resume_text.split())
     prompt = resume_parser_prompt(resume_text)
 
     print(f"Prompt Length: {len(prompt)} characters")
 
     payload = {
-        "model": "qwen2.5:7b",
+        "model": "qwen2.5:3b",
         "prompt": prompt,
         "stream": False,
-        "format": "json",
+        # "format": "json",
         "options": {
-            "temperature": 0,
-            "num_predict": 1024
+            "temperature": 0.1,
+            "num_predict": 500
         }
     }
 
@@ -42,10 +42,21 @@ def parse_resume(resume_text: str):
     print(f"Request completed in {end - start:.2f} seconds")
 
 
-    result = response.json()["response"]
+    data = response.json()
 
-    print("\n===== RAW LLM RESPONSE =====\n")
+    print("\n===== FULL API RESPONSE =====")
+    # print(data)
+    print("============================\n")
+
+    result = data["response"].strip()
+
+    print("\n===== RAW LLM RESPONSE =====")
     # print(result)
-    print("\n============================\n")
+    print("============================\n")
 
-    return json.loads(result)
+    try:
+        return json.loads(result)
+    except json.JSONDecodeError as e:
+        print("JSON Error:", e)
+        print(result)
+        return None

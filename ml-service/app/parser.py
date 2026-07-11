@@ -20,7 +20,7 @@ def extract_text_from_pdf(pdf_path: str) -> str:
 
 if __name__ == "__main__":
 
-    pdf_path = "resumes/sample_resume.pdf"
+    pdf_path = r"resumes\Utkarsh.pdf"
 
     print("Step 1: Reading PDF...")
 
@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     os.makedirs("output", exist_ok=True)
 
-    with open("output/resume.json", "w", encoding="utf-8") as f:
+    with open("output/resume_p.json", "w", encoding="utf-8") as f:
         json.dump(resume, f, indent=4)
 
         

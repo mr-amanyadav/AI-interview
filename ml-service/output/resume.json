@@ -7,27 +7,25 @@
         "C++",
         "JavaScript",
         "C",
-        "Data Structures & Algorithms: Problem Solving",
-        "Machine Learning & Data Analysis: NumPy, Pandas, Matplot, Seaborn, Scikit-learn, Machine Learning models, Deep learning Fundamentals",
-        "Databases: Mysql, Supabase",
-        "Web & Development Tools: Streamlit, Git, GitHub",
-        "AI: RAG (Learning), Agentic AI (Learning)",
-        "Core Concepts: Data Structures & Algorithms, OOP, Problem Solving"
+        "Data Structures & Algorithms",
+        "Problem Solving",
+        "Machine Learning & Data Analysis",
+        "NumPy",
+        "Pandas",
+        "Matplot",
+        "Seaborn",
+        "Scikit-learn",
+        "Deep learning Fundamentals",
+        "Databases: Mysql,Supabase",
+        "Web & Development Tools: Streamlit",
+        "Git GitHub",
+        "AI:RAG (Learning), Agentic AI (Learning)",
+        "Core Concepts:Data Structures & Algorithms, OOP, Problem Solving"
     ],
     "education": [
         {
             "degree": "Bachelor of Technology (B.Tech)",
-            "institution": "Dr. A.P.J. Abdul Kalam Technical University (AKTU)",
-            "location": "Kanpur, India",
-            "start_date": "10/2023",
-            "end_date": "07/2027"
-        },
-        {
-            "degree": "Prime: AI/ML Batch",
-            "institution": "Apna College",
-            "location": "Kanpur, India",
-            "start_date": "11/2025",
-            "end_date": "04/2026"
+            "institution": "Dr. A.P.J. Abdul Kalam Technical University (AKTU)"
         }
     ],
     "experience": [],
@@ -41,10 +39,7 @@
                 "Face Recognition",
                 "Librosa",
                 "Supabase"
-            ],
-            "description": "Developed an attendance management system using face recognition and voice verification. Built an interactive web interface using Streamlit. Integrated Supabase for storing student records and attendance data.",
-            "start_date": "03/2026",
-            "end_date": "03/2026"
+            ]
         },
         {
             "title": "House Price Prediction",
@@ -54,17 +49,11 @@
                 "NumPy",
                 "Scikit-learn",
                 "Matplotlib"
-            ],
-            "description": "Built a machine learning model to predict house prices using historical housing data. Performed data preprocessing, feature selection, and model evaluation. Applied regression algorithms using Scikit-learn.",
-            "start_date": "11/2025",
-            "end_date": "11/2025"
+            ]
         },
         {
             "title": "Water Fault Management System",
-            "technologies": [],
-            "description": "Built a smart water fault management platform for reporting and monitoring water supply issues. Developed modules for fault registration, status tracking, and data analysis. Improved issue management through centralized data storage and automated workflows. Created dashboards for monitoring fault reports and system performance.",
-            "start_date": "04/2025",
-            "end_date": "04/2025"
+            "technologies": []
         },
         {
             "title": "Chess Game",
@@ -72,10 +61,7 @@
                 "Python",
                 "OOP",
                 "Data Structures & Algorithms"
-            ],
-            "description": "Developed a fully functional Chess game implementing standard chess rules and piece movements. Designed game logic for move validation, check detection, and game state management. Applied Object-Oriented Programming principles to model chess pieces and board interactions. Created an interactive user interface for gameplay and move tracking.",
-            "start_date": "07/2024",
-            "end_date": "07/2024"
+            ]
         }
     ]
 }
