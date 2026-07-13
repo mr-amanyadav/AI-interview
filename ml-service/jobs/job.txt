@@ -1,0 +1,18 @@
+Machine Learning Intern
+
+Company: XYZ Technologies
+
+Responsibilities
+
+Develop ML models.
+Work with Python.
+Use Pandas, NumPy and Scikit-learn.
+Build REST APIs using FastAPI.
+Knowledge of Git.
+Experience with SQL.
+
+Preferred
+
+Docker
+AWS
+LLMs

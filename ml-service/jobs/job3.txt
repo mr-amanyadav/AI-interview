@@ -1,0 +1,37 @@
+About the Role;
+We are looking for a passionate and curious Frappe Developer Intern to join our technology team. This internship is ideal for students and recent graduates who want hands-on experience building real-world business applications using the Frappe Framework and ERPNext. As an intern, you will work closely with experienced team members and business stakeholders to develop workflows, automations, dashboards, and internal tools that solve real operational challenges.
+Key Responsibilities
+Assist in building and customizing applications using the Frappe Framework.
+Create and maintain DocTypes, workflows, reports, and dashboards.
+Develop basic Server Scripts (Python) and Client Scripts (JavaScript).
+Understand business requirements and translate them into system workflows.
+Support troubleshooting and enhancement of existing applications.
+Assist with API integrations and data management tasks.
+Collaborate with cross-functional teams to improve business processes.
+Participate in testing, documentation, and deployment activities.
+Eligibility Criteria
+Pursuing or recently completed B.Tech, BCA, MCA, B.Sc. (Computer Science), or a related degree.
+Basic understanding of Python or JavaScript.
+Familiarity with programming fundamentals such as variables, loops, conditions, and data structures.
+Strong analytical and problem-solving skills.
+Good communication and collaboration abilities.
+Eagerness to learn and adapt in a fast-paced environment.
+Preferred Skills
+Exposure to Frappe Framework or ERPNext.
+Basic understanding of REST APIs.
+Familiarity with SQL and databases.
+Knowledge of Git/GitHub.
+Academic, personal, or internship projects related to software or web development.
+What You'll Learn
+Building production-ready applications on the Frappe Framework.
+Designing and implementing business workflows and automations.
+Backend development using Python.
+Working with APIs, integrations, and databases.
+Understanding real-world business operations and process digitization.
+Best practices in software development and problem-solving.
+What We're Looking For
+Curiosity and a strong learning mindset.
+Passion for technology and automation.
+Ownership and accountability for assigned tasks.
+Ability to work independently and as part of a team.
+Willingness to experiment, learn, and grow.

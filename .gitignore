@@ -25,15 +25,12 @@ interview-env/
 
 # Input files
 resumes/
-jobs/
+
 
 # Generated outputs
-outputs/
-
-# If your folders have different names
-resume/
-job_description/
 output/
+
+
 
 # PDF and document files (optional)
 *.pdf
