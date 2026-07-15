@@ -1,6 +1,6 @@
 import json
 import requests
-import os
+
 import time
 
 from prompts import resume_parser_prompt
@@ -21,8 +21,8 @@ def parse_resume(resume_text: str):
         "stream": False,
         # "format": "json",
         "options": {
-            "temperature": 0.1,
-            "num_predict": 500
+            "temperature": 0,
+            "num_predict": 350
         }
     }
 
