@@ -9,9 +9,7 @@ from jd_prompts import jd_parser_prompt
 
 load_dotenv()
 
-client = genai.Client(
-    api_key=os.getenv("GEMINI_API_KEY")
-)
+from gemini_config import generate_content
 
 
 def parse_job_description(job_text):
@@ -24,10 +22,7 @@ def parse_job_description(job_text):
 
     start = time.time()
 
-    response = client.models.generate_content(
-        model="gemini-3.5-flash",
-        contents=prompt
-    )
+    response = generate_content(prompt)
 
     end = time.time()
 

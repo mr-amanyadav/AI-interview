@@ -1,19 +1,20 @@
 import json
-import time
 import os
+import time
 
 from dotenv import load_dotenv
 from google import genai
 
-from matcher_prompt import matcher_prompt
+from interview_prompt import interview_prompt
 
 load_dotenv()
 
 from gemini_config import generate_content
 
-def match_resume(resume, job):
 
-    prompt = matcher_prompt(resume, job)
+def generate_interview_questions(resume, job, match):
+
+    prompt = interview_prompt(resume, job, match)
 
     print(f"Prompt Length: {len(prompt)}")
 
@@ -23,15 +24,9 @@ def match_resume(resume, job):
 
     end = time.time()
 
-    print("✅ Matching Complete")
+    print("✅ Interview Questions Generated")
     print(f"Time: {end-start:.2f} sec")
 
     result = response.text.strip()
-
-    # Remove markdown code fences if Gemini adds them
-    if result.startswith("```"):
-        result = result.replace("```json", "").replace("```", "").strip()
-
-    print(result)
 
     return json.loads(result)

@@ -1,23 +1,11 @@
 import json
-import os
+# import os
 import time
-from dotenv import load_dotenv
-from google import genai
+# from dotenv import load_dotenv
+# from google import genai
 from prompts import resume_parser_prompt
 
-# Load .env
-load_dotenv()
-
-
-
-
-
-
-
-client = genai.Client(
-    api_key=os.getenv("GEMINI_API_KEY")
-)
-
+from gemini_config import generate_content
 
 
 def parse_resume(resume_text: str):
@@ -30,10 +18,7 @@ def parse_resume(resume_text: str):
 
     start = time.time()
 
-    response = client.models.generate_content(
-        model="gemini-3.1-flash-lite",
-        contents=prompt
-    )
+    response = generate_content(prompt)
 
     end = time.time()
 
