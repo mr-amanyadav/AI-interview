@@ -1,15 +1,11 @@
 import json
 import time
-import os
 
-from dotenv import load_dotenv
-from google import genai
+from app2.jd_prompts import jd_parser_prompt
 
-from jd_prompts import jd_parser_prompt
 
-load_dotenv()
 
-from gemini_config import generate_content
+from app2.gemini_config import generate_content
 
 
 def parse_job_description(job_text):

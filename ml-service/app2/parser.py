@@ -2,19 +2,22 @@ import fitz
 import json
 import os
 
-from gemini_resume_parser import parse_resume
+from app2.gemini_resume_parser import parse_resume
 
-
-def extract_text_from_pdf(pdf_path):
+def extract_text_from_pdf(pdf):
 
     text = ""
 
-    with fitz.open(pdf_path) as doc:
+    if isinstance(pdf, bytes):
+        doc = fitz.open(stream=pdf, filetype="pdf")
+    else:
+        doc = fitz.open(pdf)
+
+    with doc:
         for page in doc:
             text += page.get_text()
 
     return text
-
 
 if __name__ == "__main__":
 

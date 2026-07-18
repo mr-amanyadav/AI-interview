@@ -1,12 +1,8 @@
 from pydantic import BaseModel
 
 
-class ResumeRequest(BaseModel):
-    resume: dict
-
-
-class JDRequest(BaseModel):
-    job: dict
+class JobRequest(BaseModel):
+    job_description: str
 
 
 class MatchRequest(BaseModel):

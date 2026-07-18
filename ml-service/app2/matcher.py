@@ -1,15 +1,7 @@
 import json
 import time
-import os
-
-from dotenv import load_dotenv
-from google import genai
-
-from matcher_prompt import matcher_prompt
-
-load_dotenv()
-
-from gemini_config import generate_content
+from app2.matcher_prompt import matcher_prompt
+from app2.gemini_config import generate_content
 
 def match_resume(resume, job):
 
@@ -32,6 +24,6 @@ def match_resume(resume, job):
     if result.startswith("```"):
         result = result.replace("```json", "").replace("```", "").strip()
 
-    print(result)
+    # print(result)
 
     return json.loads(result)

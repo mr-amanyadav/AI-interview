@@ -3,10 +3,8 @@ import json
 import time
 # from dotenv import load_dotenv
 # from google import genai
-from prompts import resume_parser_prompt
-
-from gemini_config import generate_content
-
+from app2.prompts import resume_parser_prompt
+from app2.gemini_config import generate_content
 
 def parse_resume(resume_text: str):
 

@@ -1,16 +1,9 @@
 import json
-import os
+
 import time
 
-from dotenv import load_dotenv
-from google import genai
-
-from interview_prompt import interview_prompt
-
-load_dotenv()
-
-from gemini_config import generate_content
-
+from app2.interview_prompt import interview_prompt
+from app2.gemini_config import generate_content
 
 def generate_interview_questions(resume, job, match):
 
