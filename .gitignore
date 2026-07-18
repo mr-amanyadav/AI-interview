@@ -1,14 +1,19 @@
+# ==========================
 # Python
+# ==========================
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
 
-# Virtual environments
+# Virtual Environments
 .venv/
 venv/
 interview-env/
 
-# Environment variables
+# Environment Variables
 .env
+.env.*
 
 # VS Code
 .vscode/
@@ -16,29 +21,36 @@ interview-env/
 # Jupyter
 .ipynb_checkpoints/
 
-# ML model files
+# ==========================
+# Machine Learning Files
+# ==========================
 *.pt
 *.pth
 *.bin
 *.safetensors
 
-
-# Input files
+# Uploaded Files
 resumes/
+jobs/
 
-
-# Generated outputs
+# Generated Output
 output/
 
-
-
-# PDF and document files (optional)
+# Optional Documents
 *.pdf
 *.docx
 
-# Environment files
-.env
+# ==========================
+# React / Node
+# ==========================
+node_modules/
+dist/
 
-# Python cache
-__pycache__/
-*.pyc
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
