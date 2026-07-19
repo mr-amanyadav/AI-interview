@@ -1,5 +1,7 @@
 import { useState } from "react";
 import api from "../api/api";
+import authApi from "../api/auth";
+
 
 import { toast } from "react-toastify";
 import Navbar from "../components/Navbar";
@@ -95,18 +97,26 @@ function Home() {
       // Interview Questions
       // --------------------------
 
-      const interviewResponse = await api.post(
-        "/generate-interview",
-        {
-          resume: resumeJson,
-          job: jobJson,
-          match: matchJson,
-        }
-      );
+const interviewResponse = await api.post(
+  "/generate-interview",
+  {
+    resume: resumeJson,
+    job: jobJson,
+    match: matchJson,
+  }
+);
 
-      setQuestions(interviewResponse.data);
+setQuestions(interviewResponse.data);
 
-      toast.success("Analysis completed successfully!");
+// Save interview to backend (MongoDB)
+await authApi.post("/history", {
+  resume: resumeJson,
+  job: jobJson,
+  match: matchJson,
+  questions: interviewResponse.data,
+});
+
+toast.success("Analysis completed successfully!");
     } catch (err) {
       console.log(err);
 
