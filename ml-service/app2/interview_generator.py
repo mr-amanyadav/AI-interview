@@ -1,9 +1,10 @@
 import json
-
 import time
+import re
 
 from app2.interview_prompt import interview_prompt
-from app2.gemini_config import generate_content
+from app2.ai.provider import generate
+
 
 def generate_interview_questions(resume, job, match):
 
@@ -13,13 +14,37 @@ def generate_interview_questions(resume, job, match):
 
     start = time.time()
 
-    response = generate_content(prompt)
+    result = generate(prompt)
 
     end = time.time()
 
     print("✅ Interview Questions Generated")
     print(f"Time: {end-start:.2f} sec")
 
-    result = response.text.strip()
+    print("\n==============================")
+    print(result)
+    print("==============================\n")
 
-    return json.loads(result)
+    # Remove Markdown code fences if present
+    result = result.strip()
+
+    if result.startswith("```json"):
+        result = result.replace("```json", "", 1)
+
+    if result.startswith("```"):
+        result = result.replace("```", "", 1)
+
+    if result.endswith("```"):
+        result = result[:-3]
+
+    result = result.strip()
+
+    # Extract JSON object
+    match = re.search(r"\{.*\}", result, re.DOTALL)
+
+    if not match:
+        raise Exception("No valid JSON found in AI response.")
+
+    json_text = match.group()
+
+    return json.loads(json_text)

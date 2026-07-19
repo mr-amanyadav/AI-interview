@@ -5,7 +5,7 @@ from app2.jd_prompts import jd_parser_prompt
 
 
 
-from app2.gemini_config import generate_content
+from app2.ai.provider import generate
 
 
 def parse_job_description(job_text):
@@ -18,14 +18,14 @@ def parse_job_description(job_text):
 
     start = time.time()
 
-    response = generate_content(prompt)
+    response = generate(prompt)
 
     end = time.time()
 
     print("✅ Response received!")
     print(f"Request completed in {end-start:.2f} seconds")
 
-    result = response.text.strip()
+    result = response.strip()
 
     print("\n===== RAW GEMINI RESPONSE =====")
     print("============================\n")

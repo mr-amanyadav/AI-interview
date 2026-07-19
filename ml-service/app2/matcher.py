@@ -1,7 +1,8 @@
 import json
 import time
 from app2.matcher_prompt import matcher_prompt
-from app2.gemini_config import generate_content
+from app2.ai.provider import generate
+
 
 def match_resume(resume, job):
 
@@ -11,14 +12,14 @@ def match_resume(resume, job):
 
     start = time.time()
 
-    response = generate_content(prompt)
+    response = generate(prompt)
 
     end = time.time()
 
     print("✅ Matching Complete")
     print(f"Time: {end-start:.2f} sec")
 
-    result = response.text.strip()
+    result = response.strip()
 
     # Remove markdown code fences if Gemini adds them
     if result.startswith("```"):

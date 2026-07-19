@@ -4,7 +4,7 @@ import time
 # from dotenv import load_dotenv
 # from google import genai
 from app2.prompts import resume_parser_prompt
-from app2.gemini_config import generate_content
+from app2.ai.provider import generate
 
 def parse_resume(resume_text: str):
 
@@ -16,14 +16,14 @@ def parse_resume(resume_text: str):
 
     start = time.time()
 
-    response = generate_content(prompt)
+    response = generate(prompt)
 
     end = time.time()
 
     print("✅ Response received!")
     print(f"Request completed in {end-start:.2f} seconds")
 
-    result = response.text.strip()
+    result = response.strip()
 
     print("\n===== RAW GEMINI RESPONSE =====\n")
     # print(result)
