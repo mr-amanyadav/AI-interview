@@ -1,6 +1,14 @@
 import { useState } from "react";
 import api from "../api/api";
 
+import { toast } from "react-toastify";
+import Navbar from "../components/Navbar";
+import ResumeUpload from "../components/ResumeUpload";
+import JDUpload from "../components/JDUpload";
+import MatchResult from "../components/MatchResult";
+import InterviewQuestions from "../components/InterviewQuestions";
+import Loading from "../components/Loading";
+
 function Home() {
   const [resume, setResume] = useState(null);
   const [jdText, setJdText] = useState("");
@@ -13,12 +21,12 @@ function Home() {
 
   const analyzeResume = async () => {
     if (!resume) {
-      alert("Upload Resume");
+      toast.error("Please upload your resume.");
       return;
     }
 
     if (!jdText && !jdFile) {
-      alert("Provide Job Description");
+      toast.error("Please provide a Job Description.");
       return;
     }
 
@@ -98,131 +106,62 @@ function Home() {
 
       setQuestions(interviewResponse.data);
 
-      alert("Analysis Complete");
+      toast.success("Analysis completed successfully!");
     } catch (err) {
       console.log(err);
 
-      alert("Something went wrong");
+      toast.error("Something went wrong.");
     }
 
     setLoading(false);
   };
 
   return (
-    <div
-      style={{
-        maxWidth: 900,
-        margin: "40px auto",
-        fontFamily: "Arial",
-      }}
-    >
-      <h1>AI Interview Assistant</h1>
+  <div className="min-h-screen bg-slate-100">
 
-      <hr />
+    <Navbar />
 
-      <h2>Resume</h2>
+    <div className="max-w-7xl mx-auto p-8">
 
-      <input
-        type="file"
-        accept=".pdf"
-        onChange={(e) => setResume(e.target.files[0])}
-      />
+      <div className="grid md:grid-cols-2 gap-8">
 
-      <br />
-      <br />
+        <ResumeUpload
+          setResume={setResume}
+        />
 
-      <h2>Job Description</h2>
+        <JDUpload
+          jdText={jdText}
+          setJdText={setJdText}
+          setJdFile={setJdFile}
+        />
 
-      <textarea
-        rows={10}
-        style={{ width: "100%" }}
-        value={jdText}
-        onChange={(e) => setJdText(e.target.value)}
-      />
+      </div>
 
-      <br />
-      <br />
+      <div className="text-center my-10">
 
-      <h3>OR Upload JD PDF</h3>
+        <button
+          onClick={analyzeResume}
+          className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-xl text-lg"
+        >
+          {loading ? "Analyzing..." : "Analyze Resume"}
+        </button>
 
-      <input
-        type="file"
-        accept=".pdf"
-        onChange={(e) => setJdFile(e.target.files[0])}
-      />
+      </div>
 
-      <br />
-      <br />
+      {loading && <Loading />}
 
-      <button onClick={analyzeResume}>
-        {loading ? "Analyzing..." : "Analyze Resume"}
-      </button>
+      {match && <MatchResult match={match} />}
 
-      <hr />
-
-      {match && (
-        <>
-          <h2>Match Result</h2>
-
-          <h3>Overall Match: {match.overall_match}%</h3>
-
-          <h4>Matched Skills</h4>
-
-          <ul>
-            {match.matched_technical_skills.map((skill) => (
-              <li key={skill}>{skill}</li>
-            ))}
-          </ul>
-
-          <h4>Missing Skills</h4>
-
-          <ul>
-            {match.missing_technical_skills.map((skill) => (
-              <li key={skill}>{skill}</li>
-            ))}
-          </ul>
-        </>
+            {questions && (
+        <InterviewQuestions
+          questions={questions}
+        />
       )}
 
-      <hr />
-
-      {questions && (
-        <>
-          <h2>Interview Questions</h2>
-
-          <h3>Technical</h3>
-
-          <ul>
-            {questions.technical_questions.map((q, i) => (
-              <li key={i}>
-                {q.question}
-              </li>
-            ))}
-          </ul>
-
-          <h3>Behavioral</h3>
-
-          <ul>
-            {questions.behavioral_questions.map((q, i) => (
-              <li key={i}>
-                {q.question}
-              </li>
-            ))}
-          </ul>
-
-          <h3>HR</h3>
-
-          <ul>
-            {questions.hr_questions.map((q, i) => (
-              <li key={i}>
-                {q.question}
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
     </div>
-  );
+
+  </div>
+);
 }
 
 export default Home;
