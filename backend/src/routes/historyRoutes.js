@@ -1,11 +1,11 @@
 import express from "express";
 
-import protect from "../middleware/authMiddleware.js";
-
 import {
   saveInterview,
   getHistory,
 } from "../controllers/historyController.js";
+
+import protect from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 

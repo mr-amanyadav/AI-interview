@@ -117,6 +117,9 @@ await authApi.post("/history", {
 });
 
 toast.success("Analysis completed successfully!");
+
+
+
     } catch (err) {
       console.log(err);
 
