@@ -42,3 +42,18 @@ An end-to-end AI-powered interview preparation platform that helps candidates:
 cd ml-service
 pip install -r requirements.txt
 python app/parser.py
+
+
+
+
+run----
+    ---ML-model----
+    .\.venv\Scripts\Activate
+    cd ml-service
+    uvicorn main:app --reload
+    ---backend----
+    cd backend
+    npm run dev
+    ----frontend------
+    cd frontend
+    npm run dev

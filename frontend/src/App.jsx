@@ -5,6 +5,8 @@ import History from "./pages/History";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
+import InterviewDetails from "./pages/InterviewDetails";
+
 
 
 function App() {
@@ -39,6 +41,15 @@ function App() {
       path="/register"
       element={<Register />}
     />
+
+    <Route
+  path="/history/:id"
+  element={
+    <ProtectedRoute>
+      <InterviewDetails />
+    </ProtectedRoute>
+  }
+  />
 
   </Routes>
 </BrowserRouter>

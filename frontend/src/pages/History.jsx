@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import authApi from "../api/auth";
 import Navbar from "../components/Navbar";
 
 function History() {
+  const navigate = useNavigate();
+
   const [history, setHistory] = useState([]);
 
   useEffect(() => {
@@ -35,7 +39,8 @@ function History() {
           history.map((item) => (
             <div
               key={item._id}
-              className="bg-white rounded-xl shadow-md p-6 mb-6"
+              onClick={() => navigate(`/history/${item._id}`)}
+              className="bg-white rounded-xl shadow-md p-6 mb-6 cursor-pointer hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
             >
               <h2 className="text-xl font-bold">
                 {item.job?.job_title || "Job Position"}
@@ -54,6 +59,12 @@ function History() {
               <p className="text-gray-500 mt-3">
                 {new Date(item.createdAt).toLocaleString()}
               </p>
+
+              <div className="mt-5 border-t pt-4">
+                <span className="text-indigo-600 font-semibold">
+                  Click to view full interview →
+                </span>
+              </div>
             </div>
           ))
         )}

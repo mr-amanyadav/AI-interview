@@ -33,3 +33,24 @@ export const getHistory = async (req, res) => {
     });
   }
 };
+
+export const getInterviewById = async (req, res) => {
+  try {
+    const interview = await Interview.findOne({
+      _id: req.params.id,
+      user: req.user._id,
+    });
+
+    if (!interview) {
+      return res.status(404).json({
+        message: "Interview not found",
+      });
+    }
+
+    res.json(interview);
+  } catch (err) {
+    res.status(500).json({
+      message: err.message,
+    });
+  }
+};
