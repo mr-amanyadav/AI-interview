@@ -28,13 +28,11 @@ function RegisterForm() {
     e.preventDefault();
 
     try {
-      const data = await registerUser(form);
+          await registerUser(form);
 
-      login(data);
+          toast.success("Registration successful! Please login.");
 
-      toast.success("Account Created!");
-
-      navigate("/");
+          navigate("/login");
 
     } catch (err) {
       toast.error(

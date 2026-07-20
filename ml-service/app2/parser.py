@@ -31,7 +31,6 @@ if __name__ == "__main__":
 
     print(f"Resume Length: {len(resume_text)} characters")
 
-    print("\nStep 2: Sending to Gemini...")
 
     resume = parse_resume(resume_text)
 

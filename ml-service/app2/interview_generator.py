@@ -22,7 +22,7 @@ def generate_interview_questions(resume, job, match):
     print(f"Time: {end-start:.2f} sec")
 
     print("\n==============================")
-    print(result)
+    # print(result)
     print("==============================\n")
 
     # Remove Markdown code fences if present
