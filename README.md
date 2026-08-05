@@ -12,16 +12,8 @@
 
 # AI Interview Platform
 
-## Live Demo
-
-Frontend:
+## Live Demo : 
 https://ai-interview-7v1sh69zn-ai-e02c.vercel.app
-
-Backend API:
-https://<your-user-backend>.onrender.com
-
-ML Service:
-https://<your-ml-backend>.onrender.com
 
 # 📌 Features
 
