@@ -13,7 +13,7 @@
 # AI Interview Platform
 
 ## Live Demo : 
-https://ai-interview-7v1sh69zn-ai-e02c.vercel.app
+https://ai-interview-lac-kappa.vercel.app
 
 # 📌 Features
 
